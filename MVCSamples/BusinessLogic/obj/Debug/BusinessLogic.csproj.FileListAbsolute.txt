@@ -1,0 +1,10 @@
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\bin\Debug\BusinessLogic.dll.config
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\bin\Debug\Ninject.dll
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\bin\Debug\Ninject.xml
+C:\Users\Student\documents\visual studio 2012\Projects\MVCSamples\BusinessLogic\obj\Debug\BusinessLogic.csprojResolveAssemblyReference.cache

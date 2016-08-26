@@ -1,0 +1,99 @@
+﻿@model BusinessLogic.Models.Employee
+
+@{
+    ViewBag.Title = "CreateWithSimpleValidation";
+}
+
+<h2>CreateWithSimpleValidation</h2>
+
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index", "Home")">Back to example page</a></li>
+    <li class="active">Standard Create (with Injected Validated Logic using NInject)</li>
+</ol>
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Employee</h3>
+        </div>
+        <div class="panel-body">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.FirstName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Position)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Position)
+                @Html.ValidationMessageFor(model => model.Position)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Salary)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Salary)
+                @Html.ValidationMessageFor(model => model.Salary)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TerminationDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TerminationDate)
+                @Html.ValidationMessageFor(model => model.TerminationDate)
+            </div>
+
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+            <div class="col-xs-10 col-xs-offset-1">
+                <h4>Explanation</h4>
+                <p>
+                    Simple attribute validations with an added Injected validation
+                    class using NInject (See Employee constructor and follow logic)
+                </p>
+                <p>
+                    You can look in BusinessLogic.Entities.Employee for all the validation
+                    attributes that have been applied to this class.
+                </p>
+                <p>
+                    The Injected validation class checks the position property to see if 
+                    it is in the list of already saved positions (could have implemented it with
+                    a separate table - but chose simple)
+                </p>
+                <p>
+                    This injected validation class communicates its errors to the modelstate 
+                    by using the IDataErrorInfo interface on the Employee class, and a matching 
+                    indexer on the validation base class Validation&lt;T&gt;
+                </p>
+                <ul>
+                    <li>First Name length</li>
+                    <li>Last Name length</li>
+                    <li>Position length</li>
+                    <li>Salary Range</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

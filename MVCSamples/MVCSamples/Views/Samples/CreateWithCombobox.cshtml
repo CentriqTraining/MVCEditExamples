@@ -1,0 +1,89 @@
+﻿@model BusinessLogic.Models.Employee
+
+@{
+    ViewBag.Title = "CreateWithCombobox";
+}
+
+<h2>CreateWithCombobox</h2>
+
+<ol class="breadcrumb">
+    <li><a href="@Url.Action("Index", "Home")">Back to example page</a></li>
+    <li class="active">Advanced Create (Limit results with Combobox)</li>
+</ol>
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Employee</h3>
+        </div>
+        <div class="panel-body">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.FirstName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FirstName)
+                @Html.ValidationMessageFor(model => model.FirstName)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+
+            <div class="editor-label">
+
+                @Html.LabelFor(model => model.Position)
+            </div>
+            <div class="editor-field">
+                <!--  Here is the combobox replacing the the std editorfor
+            @Html.EditorFor(model => model.Position)
+                -->
+                @Html.DropDownListFor(model => model.Position, (IEnumerable<SelectListItem>)ViewBag.PositionChoices)
+                @Html.ValidationMessageFor(model => model.Position)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Salary)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Salary)
+                @Html.ValidationMessageFor(model => model.Salary)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TerminationDate)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TerminationDate)
+                @Html.ValidationMessageFor(model => model.TerminationDate)
+            </div>
+
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+
+            <div class="col-xs-10 col-xs-offset-1">
+                <h4>Explanation</h4>
+                <p>
+                    The only thing that changes in the combobox version is
+                    changing the @@Html.EditorFor() to an @@Html.DropDownListFor()
+                </p>
+                <p>
+                    The options that need to show up in the dropdown are shipped in
+                    to the combobox through the ViewBag.PositionChoices property, 
+                    filled on the action method of the controller.
+                </p>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

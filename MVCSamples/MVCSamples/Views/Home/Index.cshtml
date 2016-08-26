@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>MVC 4 Text Editor Samples</h2>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Data</h3>
+    </div>
+    <div class="panel-body">
+        <a href="@Url.Action("Index", "Samples")">
+            <span class="glyphicon glyphicon-link">&nbsp;</span>
+            Show list of Employees
+        </a>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Examples (Click on each to see the demo of that functionality)</h3>
+        <p>
+        Validation examples are primarily looking at the position field.  If we had a business
+        rule that said only current positions can be entered...
+        </p>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <a href="@Url.Action("Create", "Samples")" class="list-group-item">
+                <h4>
+                    <span class="glyphicon glyphicon-link">&nbsp;</span>
+                    Standard Editbox
+                </h4>
+                Employee Create functionality with no specific field choice limitation but does use attribute validation for string lengths and required
+            </a>
+            <a href="@Url.Action("CreateWithSimpleValidation", "Samples")" class="list-group-item">
+                <h4>
+                    <span class="glyphicon glyphicon-link">&nbsp;</span>
+                    Standard Create with validation
+                </h4>
+                Employee create functionality is weighted on server side with injected business logic
+            using NInject.  This validator will make sure whichever position is entered is already 
+            a valid position in the database table.
+            </a>
+            <a href="@Url.Action("CreateWithCombobox", "Samples")" class="list-group-item">
+                <h4>
+                    <span class="glyphicon glyphicon-link">&nbsp;</span>
+                    Combobox validation
+                </h4>
+                Employee create functionality that uses a dropdown combobox and limits users
+            to only selecting values that are in the list.
+            </a>
+            <a href="@Url.Action("CreateWithAutocomplete", "Samples")" class="list-group-item">
+                <h4>
+                    <span class="glyphicon glyphicon-link">&nbsp;</span>
+                    Auto Complete
+                </h4>
+                Employee create functionality combines better experience for user at the expense of client side validation.
+                As user types, legal suggestions automatically popup for them to choose. 
+                However, there is nothing demanding they select only those on the list so we also
+                employ server side validation like above using NInject
+
+            </a>
+        </div>
+
+    </div>
+</div>
